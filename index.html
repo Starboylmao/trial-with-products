@@ -1,222 +1,206 @@
 <!DOCTYPE html>
 <style>
-    *{
-    margin: 0;
-    padding: 0;
-}
-
-html, body{
-    height: 100%;
-}
-
-body{
-    overflow: hidden;
-    display: flex;
-    background: #070716;
-    perspective: 1000px;
-    transform-style: preserve-3d; 
-}
-
-#drag, #spin{
-    position: relative;
-    display: flex;
-    margin: auto;
-    transform-style: preserve-3d;
-    transform: rotateX(-10deg) ;
-}
-
-#drag img{
-    transform-style: preserve-3d;
-    position:absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 200px;
-    text-align: center;
-    box-shadow: 0 0 8px #fff;
-    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
-}
-
-#drag img-hover{
-    box-shadow: 0 0 15px #fffd;
-    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
-}
-
-#ground{
-    width:900px;
-    height:900px;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateX(90deg);
-}
-
-@keyframes spinRevert{
-    from{
-        transform: rotateY(360deg);
-    }
-    to{
-        transform: rotateY(0deg);
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-}
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        overflow: hidden;
+        display: flex;
+        background: #070716;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+    #drag {
+        position: relative;
+        display: flex;
+        margin: auto;
+        transform-style: preserve-3d;
+        transform: rotateX(-10deg);
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 190px;
+        height: 230px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .product-card p {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .product-card span {
+        color: #888;
+    }
+
+    #ground {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotateX(90deg);
+    }
+
+    #spin {
+        animation: spinRevert 10s infinite linear;
+        transform-style: preserve-3d;
+        width: fit-content;
+        margin: auto;
+    }
+
+    @keyframes spinRevert {
+        from {
+            transform: rotateY(360deg);
+        }
+        to {
+            transform: rotateY(0deg);
+        }
+    }
 </style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="starboylmao2.css">
-    </head>
+</head>
 <body>
-
-<div id="drag">
-    <div id="spin">
-        <a href="https://solestockeruk.com/products/dunk-low-grey-fog">
-            <div class=".product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 190px;
-  height: 230px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.product-card p {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.product-card span {
-  color: #888;
-}
-
-">
-                <img src="product1_image_url" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>Description of Product 1</p>
-            </div>
-        </a>
-        <a href="product2_url">
-            <div class="product-card">
-                <img src="product2_image_url" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>Description of Product 2</p>
-            </div>
-        </a>
-        <a href="product3_url">
-            <div class="product-card">
-                <img src="product3_image_url" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>Description of Product 3</p>
-            </div>
-        </a>
-        <!-- Add more product cards as needed -->
+    <div id="drag">
+        <div id="spin">
+            <a href="https://solestockeruk.com/products/dunk-low-grey-fog">
+                <div class="product-card" style="transform: rotateY(0deg) translateZ(340px);">
+                    <img src="product1_image_url" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>Description of Product 1</p>
+                </div>
+            </a>
+            <a href="product2_url">
+                <div class="product-card" style="transform: rotateY(45deg) translateZ(340px);">
+                    <img src="product2_image_url" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>Description of Product 2</p>
+                </div>
+            </a>
+            <a href="product3_url">
+                <div class="product-card" style="transform: rotateY(90deg) translateZ(340px);">
+                    <img src="product3_image_url" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>Description of Product 3</p>
+                </div>
+            </a>
+            <!-- Add more product cards as needed -->
+        </div>
+        <div id="ground"></div>
     </div>
-    <div id="ground"></div>
-</div>
 
-<script>
-    var radius = 340;
-    var autoRotate = true;
-    var rotateSpeed = -60;
-    var imgWidth = 190;
-    var imgHeight = 230;
+    <script>
+        var radius = 340;
+        var autoRotate = true;
+        var rotateSpeed = -60;
+        var imgWidth = 190;
+        var imgHeight = 230;
 
-    setTimeout(init, 1000);
+        setTimeout(init, 1000);
 
-    var odrag = document.getElementById('drag');
-    var ospin = document.getElementById('spin');
-    var aEle = Array.from(ospin.getElementsByClassName('product-card'));
+        var odrag = document.getElementById('drag');
+        var ospin = document.getElementById('spin');
+        var aEle = Array.from(ospin.getElementsByClassName('product-card'));
 
-    ospin.style.width = imgWidth + "px";
-    ospin.style.height = imgHeight + "px";
+        ospin.style.width = imgWidth + "px";
+        ospin.style.height = imgHeight + "px";
 
-    var ground = document.getElementById('ground');
-    ground.style.width = radius * 3 + "px";
-    ground.style.height = radius * 3 + "px";
+        var ground = document.getElementById('ground');
+        ground.style.width = radius * 3 + "px";
+        ground.style.height = radius * 3 + "px";
 
-    function init(delayTime) {
-        for (var i = 0; i < aEle.length; i++) {
-            aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
-            aEle[i].style.transition = "transform 1s";
-            aEle[i].style.transitionDelay = (delayTime || (aEle.length - i) / 4) + "s";
+        function init(delayTime) {
+            for (var i = 0; i < aEle.length; i++) {
+                aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
+                aEle[i].style.transition = "transform 1s";
+                aEle[i].style.transitionDelay = (delayTime || (aEle.length - i) / 4) + "s";
+            }
         }
-    }
 
-    function applyTransform(obj) {
-        if (tY > 180) tY = 180;
-        if (tY < 0) tY = 0;
+        function applyTransform(obj) {
+            if (tY > 180) tY = 180;
+            if (tY < 0) tY = 0;
 
-        obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + tX + "deg)";
-    }
+            obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + tX + "deg)";
+        }
 
-    function playSpin(yes) {
-        ospin.style.animationPlayState = (yes ? 'running' : 'paused');
-    }
+        function playSpin(yes) {
+            ospin.style.animationPlayState = (yes ? 'running' : 'paused');
+        }
 
-    var sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 10;
+        var sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 10;
 
-    if (autoRotate) {
-        var animationName = (rotateSpeed > 0) ? 'spin' : 'spinRevert';
-        ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
-    }
+        if (autoRotate) {
+            var animationName = (rotateSpeed > 0) ? 'spin' : 'spinRevert';
+            ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+        }
 
-    document.onpointerdown = function(e) {
-        clearInterval(odrag.timer);
-        e = e || window.event;
-        sX = e.clientX;
-        sY = e.clientY;
-
-        this.onpointermove = function(e) {
+        document.onpointerdown = function(e) {
+            clearInterval(odrag.timer);
             e = e || window.event;
-            var nX = e.clientX;
-            var nY = e.clientY;
-            desX = nX - sX;
-            desY = nY - sY;
-            tX += desX * 0.1;
-            tY += desY * 0.1;
-            applyTransform(odrag);
-            sX = nX;
-            sY = nY;
-        };
+            sX = e.clientX;
+            sY = e.clientY;
 
-        this.onpointerup = function(e) {
-            this.onpointermove = this.onpointerup = null;
-            odrag.timer = setInterval(function() {
-                desX *= 0.95;
-                desY *= 0.95;
+            this.onpointermove = function(e) {
+                e = e || window.event;
+                var nX = e.clientX;
+                var nY = e.clientY;
+                desX = nX - sX;
+                desY = nY - sY;
                 tX += desX * 0.1;
                 tY += desY * 0.1;
                 applyTransform(odrag);
-                playSpin(false);
-                if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
-                    clearInterval(odrag.timer);
-                    playSpin(true);
-                }
-            }, 17);
-        };
+                sX = nX;
+                sY = nY;
+            };
 
-        return false;
-    };
-</script>
+            this.onpointerup = function(e) {
+                this.onpointermove = this.onpointerup = null;
+                odrag.timer = setInterval(function() {
+                    desX *= 0.95;
+                    desY *= 0.95;
+                    tX += desX * 0.1;
+                    tY += desY * 0.1;
+                    applyTransform(odrag);
+                    playSpin(false);
+                    if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+                        clearInterval(odrag.timer);
+                        playSpin(true);
+                    }
+                }, 17);
+            };
+
+            return false;
+        };
+    </script>
 </body>
 </html>
