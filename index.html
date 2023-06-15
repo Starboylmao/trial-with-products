@@ -5,18 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="starboylmao2.css">
-</head>
+    </head>
 <body>
 
 <div id="drag">
     <div id="spin">
-        <img src="7.jpg" alt="">
-        <img src="6.jpg">
-        <img src="4.jpg" alt="description">
-        <img src="1.jpg" alt="">
-        <img src="2.jpg" alt="">
-        <img src="5.jpeg" alt="">
-        <img src="3.jpg" alt="">
+        <a href="https://solestockeruk.com/products/dunk-low-grey-fog">
+            <div class=".product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 230px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.product-card span {
+  color: #888;
+}
+
+">
+                <img src="product1_image_url" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Description of Product 1</p>
+            </div>
+        </a>
+        <a href="product2_url">
+            <div class="product-card">
+                <img src="product2_image_url" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Description of Product 2</p>
+            </div>
+        </a>
+        <a href="product3_url">
+            <div class="product-card">
+                <img src="product3_image_url" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>Description of Product 3</p>
+            </div>
+        </a>
+        <!-- Add more product cards as needed -->
     </div>
     <div id="ground"></div>
 </div>
@@ -32,8 +82,7 @@
 
     var odrag = document.getElementById('drag');
     var ospin = document.getElementById('spin');
-    var aimg = ospin.getElementsByTagName('img');
-    var aEle = Array.from(aimg);
+    var aEle = Array.from(ospin.getElementsByClassName('product-card'));
 
     ospin.style.width = imgWidth + "px";
     ospin.style.height = imgHeight + "px";
@@ -105,7 +154,6 @@
 
         return false;
     };
-
 </script>
 </body>
 </html>
